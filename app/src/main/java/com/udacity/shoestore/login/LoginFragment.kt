@@ -1,12 +1,13 @@
 package com.udacity.shoestore.login
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
@@ -28,18 +29,10 @@ class LoginFragment : Fragment() {
 
     private fun setClickListeners() {
         binding.signupButton.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "sign up",
-                Toast.LENGTH_SHORT
-            ).show()
+            Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
         binding.loginButton.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "log in",
-                Toast.LENGTH_SHORT
-            ).show()
+            it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
     }
 }

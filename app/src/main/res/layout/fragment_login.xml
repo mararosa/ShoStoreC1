@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_16dp"
-            android:hint="@string/email_hint"
+            android:hint="@string/login_email_hint"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -41,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:hint="@string/password_hint"
+            android:hint="@string/login_password_hint"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -71,7 +67,7 @@
             android:layout_marginEnd="@dimen/dimen_16dp"
             android:clickable="true"
             android:gravity="center"
-            android:text="@string/sign_up_button"
+            android:text="@string/login_sign_up_button"
             android:textColor="@color/orange_button" />
 
     </LinearLayout>
