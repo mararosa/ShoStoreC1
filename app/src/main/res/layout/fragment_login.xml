@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
-            android:text="@string/login_button"
+            android:text="@string/login_title"
             style="@style/ButtonStyle" />
 
         <TextView
