@@ -45,4 +45,5 @@ class WelcomeFragment : Fragment() {
            Navigation.findNavController(it).navigate(R.id.action_welcomeFragment_to_instructionsFragment)
         }
     }
+
 }

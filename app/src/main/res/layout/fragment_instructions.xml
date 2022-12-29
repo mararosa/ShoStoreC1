@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -7,10 +8,84 @@
         android:layout_height="match_parent"
         tools:context=".instructions.InstructionsFragment">
 
+        <ImageView
+            android:id="@+id/shoeListIcon"
+            android:layout_width="@dimen/dimen_instructions_image_size"
+            android:layout_height="@dimen/dimen_instructions_image_size"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/image_shoe_list"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            style="@style/TextsStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:text="In this App you can see your list of shoes with it type and image"
+            app:layout_constraintBottom_toBottomOf="@id/shoeListIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/shoeListIcon"
+            app:layout_constraintTop_toTopOf="@id/shoeListIcon" />
+
+        <ImageView
+            android:id="@+id/addNewShoeIcon"
+            android:layout_width="@dimen/dimen_instructions_image_size"
+            android:layout_height="@dimen/dimen_instructions_image_size"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:src="@drawable/image_add"
+            app:layout_constraintStart_toStartOf="@+id/shoeListIcon"
+            app:layout_constraintTop_toBottomOf="@id/shoeListIcon" />
+
+        <TextView
+            style="@style/TextsStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:text="You can click on the add button to add a new pair of shoes."
+            app:layout_constraintBottom_toBottomOf="@id/addNewShoeIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addNewShoeIcon"
+            app:layout_constraintTop_toTopOf="@id/addNewShoeIcon" />
+
+        <ImageView
+            android:id="@+id/shoeLDetailIcon"
+            android:layout_width="@dimen/dimen_instructions_image_size"
+            android:layout_height="@dimen/dimen_instructions_image_size"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:src="@drawable/image_shoe"
+            app:layout_constraintStart_toStartOf="@+id/addNewShoeIcon"
+            app:layout_constraintTop_toBottomOf="@id/addNewShoeIcon" />
+
+        <TextView
+            android:id="@+id/teste"
+            style="@style/TextsStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:text="You can click on an image to see the shoe's details as name, size, description, etc"
+            app:layout_constraintBottom_toBottomOf="@id/shoeLDetailIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shoeLDetailIcon"
+            app:layout_constraintTop_toTopOf="@id/shoeLDetailIcon" />
+
+        <Button
+            android:id="@+id/shoe_list_button"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="hghgdfssdnfjgkjghfxdb" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:text="@string/show_list_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

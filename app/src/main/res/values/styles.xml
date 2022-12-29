@@ -33,9 +33,14 @@
         <item name="android:textColor">@color/orange_button</item>
     </style>
 
-    <style name="TitleStyle">
-        <item name="android:textSize">20sp</item>
+    <style name="HeaderStyle">
+        <item name="android:textSize">24sp</item>
         <item name="android:fontFamily">@font/palanquin_dark_bold</item>
+    </style>
+
+    <style name="TextsStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/palanquin</item>
     </style>
 
     <style name="HeaderImageStyle">

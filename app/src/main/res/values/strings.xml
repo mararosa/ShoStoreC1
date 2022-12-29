@@ -7,6 +7,7 @@
     <string name="welcome_title">Welcome!</string>
     <string name="welcome_description">Shop with Us and Enjoy a new style!</string>
     <string name="instructions_title">Instructions</string>
+    <string name="show_list_title">Your Shoe List</string>
     <string name="login_image">Login Image - There are five people and one big box with a heart drawing in the right side of it. Each person is holding something. There is a woman on top of the box holding a large gray shoe.</string>
     <string name="welcome_image">Welcome Image - Four people in a row they are hug each other and in the top of them there is a balloon with the word welcome</string>
 </resources>
