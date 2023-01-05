@@ -46,5 +46,9 @@
         android:id="@+id/shoeListFragment"
         android:name="com.udacity.shoestore.shoelist.ShoeListFragment"
         android:label="@string/shoe_list_title"
-        tools:layout="@layout/fragment_shoe_list" />
+        tools:layout="@layout/fragment_shoe_list" >
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

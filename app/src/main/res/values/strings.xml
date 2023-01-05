@@ -3,6 +3,7 @@
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="login_title">Login</string>
+    <string name="logout_text">Logout</string>
     <string name="login_sign_up_button">Sign Up</string>
     <string name="welcome_title">Welcome!</string>
     <string name="welcome_description">Shop with Us and Enjoy a new style!</string>

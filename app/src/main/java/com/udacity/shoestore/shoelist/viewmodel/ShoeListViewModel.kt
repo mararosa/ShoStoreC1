@@ -1,14 +1,17 @@
 package com.udacity.shoestore.shoelist.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
 
 class ShoeListViewModel : ViewModel() {
-    var listVO= MutableLiveData<List<Shoe>>()
+    private var _showList = MutableLiveData<List<Shoe>>()
+    val showList: LiveData<List<Shoe>>
+        get() = _showList
 
     init {
-        listVO.value = createShoeList()
+        _showList.value = createShoeList()
     }
 
     override fun onCleared() {
@@ -18,14 +21,14 @@ class ShoeListViewModel : ViewModel() {
     private fun createShoeList(): List<Shoe> {
         return listOf(
             Shoe(
-                name = "asa",
+                name = "asdfa",
                 size = 2.0,
                 company = "asa",
                 description = "asasa",
                 images = listOf()
             ),
             Shoe(
-                name = "asa",
+                name = "adfdsgdfsa",
                 size = 2.0,
                 company = "asa",
                 description = "asasa",

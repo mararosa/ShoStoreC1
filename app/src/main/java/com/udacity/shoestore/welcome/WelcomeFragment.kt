@@ -28,18 +28,6 @@ class WelcomeFragment : Fragment() {
         setupClickListeners()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.overflow_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(
-            item,
-            requireView().findNavController()
-        ) || super.onOptionsItemSelected(item)
-    }
-
     private fun setupClickListeners() {
         binding.instructionsButton.setOnClickListener {
            Navigation.findNavController(it).navigate(R.id.action_welcomeFragment_to_instructionsFragment)
