@@ -6,41 +6,61 @@ import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
 
 class ShoeListViewModel : ViewModel() {
-    private var _showList = MutableLiveData<List<Shoe>>()
-    val showList: LiveData<List<Shoe>>
-        get() = _showList
+    private var _shoeList = MutableLiveData<List<Shoe>>()
+    val shoeList: LiveData<List<Shoe>>
+        get() = _shoeList
+    private var _stateEmptyFeedback = MutableLiveData<Boolean>()
+    val stateEmptyFeedback: LiveData<Boolean>
+        get() = _stateEmptyFeedback
+
+    private val list = listOf(
+        Shoe(
+            name = "nike",
+            size = 2.0,
+            company = "asa",
+            description = "asadsnzsjksafkjskkhsajhfkjshkjfhkahfkjhakfjhskjfhfaafssa",
+            images = listOf()
+        ),
+        Shoe(
+            name = "adidas",
+            size = 2.0,
+            company = "asa",
+            description = "asasgcjyfkfkkjetyresa",
+            images = listOf()
+        ),
+        Shoe(
+            name = "zara",
+            size = 2.0,
+            company = "asa",
+            description = "asa2332423535sa",
+            images = listOf()
+        ),
+        Shoe(
+            name = "dakota",
+            size = 2.0,
+            company = "asa",
+            description = "asa2332423535sa",
+            images = listOf()
+        )
+    )
+
 
     init {
-        _showList.value = createShoeList()
+        _shoeList.value = emptyList()
+        _stateEmptyFeedback.value = false
+        verifyListSize()
     }
 
     override fun onCleared() {
         super.onCleared()
     }
 
-    private fun createShoeList(): List<Shoe> {
-        return listOf(
-            Shoe(
-                name = "asdfa",
-                size = 2.0,
-                company = "asa",
-                description = "asasa",
-                images = listOf()
-            ),
-            Shoe(
-                name = "adfdsgdfsa",
-                size = 2.0,
-                company = "asa",
-                description = "asasa",
-                images = listOf()
-            ),
-            Shoe(
-                name = "asa",
-                size = 2.0,
-                company = "asa",
-                description = "asasa",
-                images = listOf()
-            )
-        )
+    private fun verifyListSize() {
+        if (list.isNotEmpty()) {
+            _shoeList.value = list
+        } else {
+            _stateEmptyFeedback.value = true
+        }
     }
+
 }
