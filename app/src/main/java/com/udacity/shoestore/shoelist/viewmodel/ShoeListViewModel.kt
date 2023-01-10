@@ -6,12 +6,13 @@ import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
 
 class ShoeListViewModel : ViewModel() {
-    private var _shoeList = MutableLiveData<List<Shoe>>()
+    private var _shoeList = MutableLiveData<List<Shoe>>(mutableListOf())
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
-    private var _stateEmptyFeedback = MutableLiveData<Boolean>()
-    val stateEmptyFeedback: LiveData<Boolean>
-        get() = _stateEmptyFeedback
+
+    private var _eventShowDetailScreen = MutableLiveData(false)
+    val eventShowDetailScreen: LiveData<Boolean>
+        get() = _eventShowDetailScreen
 
     private val list = listOf(
         Shoe(
@@ -44,23 +45,20 @@ class ShoeListViewModel : ViewModel() {
         )
     )
 
-
     init {
-        _shoeList.value = emptyList()
-        _stateEmptyFeedback.value = false
-        verifyListSize()
+        _shoeList.value = list
     }
 
     override fun onCleared() {
         super.onCleared()
     }
 
-    private fun verifyListSize() {
-        if (list.isNotEmpty()) {
-            _shoeList.value = list
-        } else {
-            _stateEmptyFeedback.value = true
-        }
+    fun onClickAddShoeDetail() {
+        _eventShowDetailScreen.value = true
+    }
+
+    fun onClickAddShoeDetailComplete() {
+        _eventShowDetailScreen.value = false
     }
 
 }

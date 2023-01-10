@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ViewShoeItemBinding
@@ -29,6 +31,7 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
 
         viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+        binding.vm = viewModel
 
         setHasOptionsMenu(true)
 
@@ -58,13 +61,25 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun setupObserves() {
-        viewModel.stateEmptyFeedback.observe(viewLifecycleOwner, Observer { isEmpty ->
-            if (isEmpty) setupEmptyView()
+
+        viewModel.eventShowDetailScreen.observe(viewLifecycleOwner, Observer { hasAddBtnClicked ->
+            if (hasAddBtnClicked) {
+                showDetailScreen()
+                viewModel.onClickAddShoeDetailComplete()
+            }
         })
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { newList ->
-            if (newList.isNotEmpty()) setupList(newList)
+            if (newList.isNotEmpty()) {
+                setupListView(newList)
+            } else {
+                setupEmptyView()
+            }
         })
+    }
+
+    private fun showDetailScreen() {
+        findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
     }
 
     private fun setupEmptyView() {
@@ -73,7 +88,7 @@ class ShoeListFragment : Fragment() {
             "You do not have any shoe in your list yet. Click in the add button for add a item"
     }
 
-    private fun setupList(newList: List<Shoe>) {
+    private fun setupListView(newList: List<Shoe>) {
         binding.emptyListFeedback.isGone
         addShoeItemView(newList)
     }
@@ -82,7 +97,6 @@ class ShoeListFragment : Fragment() {
         val linearLayoutContainer = binding.shoeListContainer
 
         list.forEach { shoe ->
-
             shoeItemBinding = DataBindingUtil.inflate(
                 layoutInflater,
                 R.layout.view_shoe_item,

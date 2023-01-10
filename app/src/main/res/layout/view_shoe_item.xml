@@ -10,8 +10,8 @@
 
         <ImageView
             android:id="@+id/imageShoe"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="@dimen/dimen_16dp"
             android:src="@drawable/image_shoe"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,12 +52,10 @@
         <TextView
             android:id="@+id/description"
             style="@style/TextsStyle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8dp"
-            android:gravity="center_horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/company"
             app:layout_constraintTop_toBottomOf="@+id/company"
             tools:text="description" />
 
@@ -66,6 +64,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_4dp"
             android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
             android:background="@color/orange_button"
             android:alpha="0.45"
             app:layout_constraintTop_toBottomOf="@id/description" />
