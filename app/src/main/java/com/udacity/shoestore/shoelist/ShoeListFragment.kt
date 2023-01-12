@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
@@ -34,6 +33,7 @@ class ShoeListFragment : Fragment() {
         binding.vm = viewModel
 
         setHasOptionsMenu(true)
+        viewModel.fetchShoeList()
 
         return binding.root
     }
@@ -69,7 +69,7 @@ class ShoeListFragment : Fragment() {
             }
         })
 
-        viewModel.shoeList.observe(viewLifecycleOwner, Observer { newList ->
+        viewModel.shoeListVO.observe(viewLifecycleOwner, Observer { newList ->
             if (newList.isNotEmpty()) {
                 setupListView(newList)
             } else {
@@ -84,8 +84,7 @@ class ShoeListFragment : Fragment() {
 
     private fun setupEmptyView() {
         binding.emptyListFeedback.isVisible
-        binding.emptyListFeedback.text =
-            "You do not have any shoe in your list yet. Click in the add button for add a item"
+        binding.emptyListFeedback.text = getString(R.string.shoe_list_empty_text)
     }
 
     private fun setupListView(newList: List<Shoe>) {

@@ -10,9 +10,9 @@
 
         <ImageView
             android:id="@+id/imageShoe"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/spacing_16"
             android:src="@drawable/image_shoe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,8 @@
             style="@style/HeaderStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_16dp"
-            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageShoe"
             tools:text="name" />
@@ -34,7 +34,7 @@
             style="@style/TextsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/spacing_16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/name"
             tools:text="size" />
@@ -44,7 +44,7 @@
             style="@style/TextsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
             app:layout_constraintEnd_toEndOf="@id/size"
             app:layout_constraintTop_toBottomOf="@id/size"
             tools:text="company" />
@@ -54,7 +54,7 @@
             style="@style/TextsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
             app:layout_constraintEnd_toEndOf="@id/company"
             app:layout_constraintTop_toBottomOf="@+id/company"
             tools:text="description" />
@@ -62,10 +62,10 @@
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_4dp"
-            android:layout_marginTop="@dimen/dimen_8dp"
-            android:layout_marginStart="@dimen/dimen_16dp"
-            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_height="@dimen/spacing_4dp"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
             android:background="@color/orange_button"
             android:alpha="0.45"
             app:layout_constraintTop_toBottomOf="@id/description" />

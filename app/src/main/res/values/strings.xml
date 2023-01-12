@@ -15,4 +15,19 @@
     <string name="instructions_text_about_add_shoe">You can click on the add button to add a new pair of shoes.</string>
     <string name="instructions_text_about_detail">You can click on an image to see the shoe\'s details as name, size, description, etc</string>
     <string name="shoe_list_title">Shoe List</string>
+    <string name="shoe_detail_title">Shoe Detail</string>
+    <string name="shoe_detail_name">Name</string>
+    <string name="shoe_detail_name_hint">shoe name</string>
+    <string name="shoe_detail_company">Company</string>
+    <string name="shoe_detail_company_hint">shoe company</string>
+    <string name="shoe_detail_size">Select your size</string>
+    <string name="shoe_detail_description">Description</string>
+    <string name="shoe_detail_description_hint">shoe description</string>
+    <string name="shoe_detail_save_button">Save</string>
+    <string name="shoe_detail_cancel_button">Cancel</string>
+    <string name="size_six">6</string>
+    <string name="size_seven">7</string>
+    <string name="size_eight">8</string>
+    <string name="size_nine">9</string>
+    <string name="shoe_list_empty_text">You do not have any shoe in your list yet. Click on add button and detail your new shoe!</string>
 </resources>

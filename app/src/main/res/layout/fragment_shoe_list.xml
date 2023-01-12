@@ -16,10 +16,12 @@
         <TextView
             android:id="@+id/emptyListFeedback"
             style="@style/HeaderStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_16dp"
-            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:gravity="center_vertical"
+            tools:text="@string/shoe_list_empty_text"
             app:layout_constraintBottom_toTopOf="@id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,23 +33,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{ () -> vm.onClickAddShoeDetail()}"
-            android:layout_marginEnd="@dimen/dimen_16dp"
-            android:padding="@dimen/dimen_16dp"
-            android:layout_marginTop="@dimen/dimen_24dp"
-            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:padding="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_24dp"
+            android:layout_marginBottom="@dimen/spacing_16"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:id="@+id/shoeListContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

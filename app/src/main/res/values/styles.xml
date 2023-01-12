@@ -17,16 +17,16 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="ButtonStyle">
-        <item name="android:layout_marginStart">@dimen/dimen_16dp</item>
-        <item name="android:layout_marginEnd">@dimen/dimen_16dp</item>
+        <item name="android:layout_marginStart">@dimen/spacing_16</item>
+        <item name="android:layout_marginEnd">@dimen/spacing_16</item>
         <item name="android:background">@drawable/background_button</item>
         <item name="android:fontFamily">@font/palanquin</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="LinkTextStyle">
-        <item name="android:layout_marginStart">@dimen/dimen_16dp</item>
-        <item name="android:layout_marginEnd">@dimen/dimen_16dp</item>
+        <item name="android:layout_marginStart">@dimen/spacing_16</item>
+        <item name="android:layout_marginEnd">@dimen/spacing_16</item>
         <item name="android:clickable">true</item>
         <item name="android:fontFamily">@font/palanquin</item>
         <item name="android:gravity">center</item>
@@ -46,7 +46,7 @@
     <style name="HeaderImageStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/login_image_height</item>
-        <item name="android:layout_margin">@dimen/dimen_16dp</item>
+        <item name="android:layout_margin">@dimen/spacing_16</item>
         <item name="android:fitsSystemWindows">false</item>
     </style>
 
