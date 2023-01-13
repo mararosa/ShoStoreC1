@@ -15,10 +15,6 @@ class ShoeListViewModel : ViewModel() {
     val eventShowDetailScreen: LiveData<Boolean>
         get() = _eventShowDetailScreen
 
-    private var _stateShowErrorMessage = MutableLiveData<Boolean>()
-    val stateShowErrorMessage: LiveData<Boolean>
-        get() = _stateShowErrorMessage
-
     private var list = mutableListOf<Shoe>()
 
     fun fetchShoeList() {
@@ -43,12 +39,7 @@ class ShoeListViewModel : ViewModel() {
     }
 
     fun onUserChangedInput(inputValues: Shoe) {
-        if (inputValues.name.isBlank() || inputValues.description.isBlank() || inputValues.company.isBlank()) {
-            _stateShowErrorMessage.value = true
-        } else {
-            this.inputValues = inputValues
-        }
-
+        this.inputValues = inputValues
     }
 
 }

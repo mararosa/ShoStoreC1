@@ -26,7 +26,9 @@
     <string name="shoe_detail_save_button">Save</string>
     <string name="shoe_detail_cancel_button">Cancel</string>
     <string name="size_six">6</string>
+    <string name="size_six_half">6.5</string>
     <string name="size_seven">7</string>
+    <string name="size_seven_half">7.5</string>
     <string name="size_eight">8</string>
     <string name="size_nine">9</string>
     <string name="shoe_list_empty_text">You do not have any shoe in your list yet. Click on add button and detail your new shoe!</string>

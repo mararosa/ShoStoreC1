@@ -123,12 +123,28 @@
                 android:text="@string/size_six" />
 
             <RadioButton
+                android:id="@+id/option_size_six_half"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:text="@string/size_six_half" />
+
+            <RadioButton
                 android:id="@+id/option_size_seven"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="@string/size_seven"
                 tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/option_size_seven_half"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:text="@string/size_seven_half" />
 
             <RadioButton
                 android:id="@+id/option_size_eight"
