@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.udacity.shoestore.shoelist.viewmodel.ShoeListViewModel" />
+            type="com.udacity.shoestore.sharedviewmodel.SharedShoeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +32,7 @@
             android:backgroundTint="@color/orange_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{ () -> vm.onClickAddShoeDetail()}"
+            android:onClick="@{ () -> vm.onClickShoeDetail()}"
             android:layout_marginEnd="@dimen/spacing_16"
             android:padding="@dimen/spacing_16"
             android:layout_marginTop="@dimen/spacing_24dp"

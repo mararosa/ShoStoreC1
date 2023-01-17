@@ -6,16 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
-import com.udacity.shoestore.shoelist.viewmodel.ShoeListViewModel
+import com.udacity.shoestore.sharedviewmodel.SharedShoeViewModel
 
 class ShoeDetailFragment : Fragment() {
     private lateinit var binding: FragmentShoeDetailBinding
-    private lateinit var viewModel: ShoeListViewModel
+    private val viewModel: SharedShoeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +24,6 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
-        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
         return binding.root
     }
 
@@ -33,7 +33,18 @@ class ShoeDetailFragment : Fragment() {
         setupObservers()
     }
 
-    private fun setupObservers() {}
+    private fun setupObservers() {
+        viewModel.eventSaveDetail.observe(viewLifecycleOwner, Observer { hasSaveDetailClicked ->
+            if (hasSaveDetailClicked) {
+                showListScreenWithANewItem()
+                viewModel.onClickSubmitFormCompleted()
+            }
+        })
+    }
+
+    private fun showListScreenWithANewItem() {
+        findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+    }
 
 
     private fun setupClickListeners() {
