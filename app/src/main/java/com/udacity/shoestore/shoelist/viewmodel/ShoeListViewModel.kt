@@ -33,13 +33,9 @@ class ShoeListViewModel : ViewModel() {
         _eventShowDetailScreen.value = false
     }
 
-    fun onClickSaveDetail() {
+    fun onClickSubmitForm(inputValues: Shoe) {
         list.add(inputValues)
         _shoeListVO.value = list
-    }
-
-    fun onUserChangedInput(inputValues: Shoe) {
-        this.inputValues = inputValues
     }
 
 }

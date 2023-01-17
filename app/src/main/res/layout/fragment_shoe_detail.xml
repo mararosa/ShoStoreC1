@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/nameLabel"
             style="@style/TextsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,12 +19,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nameInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/width_input_layout"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginHorizontal="@dimen/spacing_16"
             android:layout_marginTop="@dimen/spacing_32dp"
-            android:hint="@string/shoe_detail_name_hint"
-            app:layout_constraintStart_toEndOf="@id/name"
+            app:helperText="Required"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:lines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -49,12 +49,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/companyInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/width_input_layout"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="@dimen/spacing_32dp"
-            android:hint="@string/shoe_detail_company_hint"
-            app:layout_constraintStart_toEndOf="@id/companyLabel"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:lines="1"
+            app:helperText="Required"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nameInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -62,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:lines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -78,12 +80,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/descriptionInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/width_input_layout"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="@dimen/spacing_32dp"
-            android:hint="@string/shoe_detail_description_hint"
-            app:layout_constraintStart_toEndOf="@id/descriptionLabel"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            app:helperText="Required"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/companyInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -91,78 +94,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:maxLines="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/size_question"
+            android:id="@+id/sizeLabel"
             style="@style/TextsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_16"
-            android:layout_marginTop="@dimen/spacing_16"
             android:text="@string/shoe_detail_size"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionInputLayout" />
+            app:layout_constraintBottom_toBottomOf="@id/sizeInputLayout"
+            app:layout_constraintTop_toTopOf="@id/sizeInputLayout"/>
 
-        <RadioGroup
-            android:id="@+id/size_options"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sizeInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/width_input_layout"
             android:layout_height="wrap_content"
-            android:checkedButton="@id/option_size_six"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="@+id/size_question"
-            app:layout_constraintTop_toBottomOf="@id/size_question">
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            app:helperText="Required"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionInputLayout">
 
-            <RadioButton
-                android:id="@+id/option_size_six"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sizeEditText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:text="@string/size_six" />
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <RadioButton
-                android:id="@+id/option_size_six_half"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:text="@string/size_six_half" />
-
-            <RadioButton
-                android:id="@+id/option_size_seven"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:text="@string/size_seven"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <RadioButton
-                android:id="@+id/option_size_seven_half"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:text="@string/size_seven_half" />
-
-            <RadioButton
-                android:id="@+id/option_size_eight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:text="@string/size_eight"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <RadioButton
-                android:id="@+id/option_size_nine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:text="@string/size_nine"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </RadioGroup>
 
         <Button
             android:id="@+id/saveButton"

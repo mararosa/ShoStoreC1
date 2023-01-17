@@ -17,12 +17,13 @@
     <string name="shoe_list_title">Shoe List</string>
     <string name="shoe_detail_title">Shoe Detail</string>
     <string name="shoe_detail_name">Name</string>
-    <string name="shoe_detail_name_hint">shoe name</string>
+    <string name="shoe_detail_name_hint">Shoe name</string>
     <string name="shoe_detail_company">Company</string>
-    <string name="shoe_detail_company_hint">shoe company</string>
+    <string name="shoe_detail_company_hint">Shoe company</string>
     <string name="shoe_detail_size">Select your size</string>
     <string name="shoe_detail_description">Description</string>
-    <string name="shoe_detail_description_hint">shoe description</string>
+    <string name="shoe_detail_description_hint">Shoe description</string>
+    <string name="shoe_detail_size_hint">Shoe size</string>
     <string name="shoe_detail_save_button">Save</string>
     <string name="shoe_detail_cancel_button">Cancel</string>
     <string name="size_six">6</string>
